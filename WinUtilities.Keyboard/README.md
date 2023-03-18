@@ -14,8 +14,10 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
+        // Subscribe to the key press event.
         KeyboardManager.Instance.OnKeyPressEvent += OnKeyPressEvent;
             
+        // This code is IMPORTANT as Windows doesn't automatically unhook these hooks on process exit.
         Application.Current.Exit += (sender, args) =>
         {
             if (KeyboardManager.Instance.UnHook())

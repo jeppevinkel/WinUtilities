@@ -19,6 +19,13 @@ namespace WinUtilities.Keyboard
         private KeyboardManager()
         {
             _keyboardHookProcedure = KeyboardHookCallback;
+
+            AppDomain.CurrentDomain.ProcessExit += (sender, args) =>
+            {
+                Debug.WriteLine("Unhooking WinUtilities.Keyboard...");
+                UnHook();
+            };
+
             Hook();
         }
 
@@ -26,7 +33,7 @@ namespace WinUtilities.Keyboard
         /// Run this to apply hooks. This is run by the constructor, so it is only needed if you unhooked at some point.
         /// </summary>
         /// <returns>True if hooks were applied. False if the hooks were already applied.</returns>
-        public bool Hook()
+        private bool Hook()
         {
             if (_currentlyHooked)
                 return false;
@@ -40,7 +47,7 @@ namespace WinUtilities.Keyboard
         /// IMPORTANT: Make sure to unhook before exiting the application, because Windows will not handle this.
         /// Unhook the windows hooks. This will cause windows to stop sending events.
         /// </summary>
-        public bool UnHook()
+        private bool UnHook()
         {
             if (!_currentlyHooked)
                 return false;
@@ -54,7 +61,6 @@ namespace WinUtilities.Keyboard
             using (Process curProcess = Process.GetCurrentProcess())
             using (ProcessModule curModule = curProcess.MainModule)
             {
-                
                 return HookUtils.SetWindowsHookEx((int) IdHook.WH_KEYBOARD_LL, proc,
                     HookUtils.GetModuleHandle(curModule?.ModuleName), 0);
             }
