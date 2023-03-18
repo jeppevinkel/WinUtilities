@@ -13,29 +13,34 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-
+        
         // Subscribe to the key press event.
         KeyboardManager.Instance.OnKeyPressEvent += OnKeyPressEvent;
-            
-        // This code is IMPORTANT as Windows doesn't automatically unhook these hooks on process exit.
-        Application.Current.Exit += (sender, args) =>
-        {
-            if (KeyboardManager.Instance.UnHook())
-            {
-                Debug.WriteLine("Unhooked keyboard events.");
-            }
-        };
-
+        // Subscribe to the key release event.
+        KeyboardManager.Instance.OnKeyReleaseEvent += OnKeyReleaseEvent;
     }
-
+        
     private void OnKeyPressEvent(object sender, KeyEventArgs eventArgs)
     {
-        Debug.WriteLine(eventArgs.KeyCode);
+        Debug.WriteLine($"{eventArgs.KeyCode} was pressed!");
 
         if (eventArgs.KeyCode == Key.H)
         {
+            // Setting Handled to true consumes the event.
             eventArgs.Handled = true;
-            Debug.WriteLine("Keypress has been handled, so it won't be sent to other applications!");
+            Debug.WriteLine("Key press has been handled, so it won't be sent to other applications!");
+        }
+    }
+
+    private void OnKeyReleaseEvent(object sender, KeyEventArgs eventArgs)
+    {
+        Debug.WriteLine($"{eventArgs.KeyCode} was released!");
+
+        if (eventArgs.KeyCode == Key.H)
+        {
+            // Setting Handled to true consumes the event.
+            eventArgs.Handled = true;
+            Debug.WriteLine("Key release has been handled, so it won't be sent to other applications!");
         }
     }
 }
