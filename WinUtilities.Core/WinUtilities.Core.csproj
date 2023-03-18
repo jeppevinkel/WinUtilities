@@ -2,6 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>A package of utilities to interact with the Windows operating system from .NET</Description>
+        <Copyright>Jeppe Vinkel Beier</Copyright>
+        <PackageProjectUrl>https://github.com/jeppevinkel/WinUtilities/tree/master/WinUtilities.Core</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/jeppevinkel/WinUtilities</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
     </PropertyGroup>
 
 </Project>
