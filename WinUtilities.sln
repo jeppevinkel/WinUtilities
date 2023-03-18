@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUtilities.Keyboard", "WinUtilities.Keyboard\WinUtilities.Keyboard.csproj", "{DBD60842-06FE-49E1-9F57-D94A8B01E35C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUtilities.Core", "WinUtilities.Core\WinUtilities.Core.csproj", "{754D39DF-29E0-4D0D-9963-B6B5343A4780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUtilities.ConsoleTest", "WinUtilities.ConsoleTest\WinUtilities.ConsoleTest.csproj", "{202FD323-11A5-4743-A5AB-AFBBC0D0F56A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUtilities.UITest", "WinUtilities.UITest\WinUtilities.UITest.csproj", "{78E3AEC9-8FB6-426A-AAE5-4C53E6699CF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBD60842-06FE-49E1-9F57-D94A8B01E35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD60842-06FE-49E1-9F57-D94A8B01E35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD60842-06FE-49E1-9F57-D94A8B01E35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD60842-06FE-49E1-9F57-D94A8B01E35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{754D39DF-29E0-4D0D-9963-B6B5343A4780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{754D39DF-29E0-4D0D-9963-B6B5343A4780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{754D39DF-29E0-4D0D-9963-B6B5343A4780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{754D39DF-29E0-4D0D-9963-B6B5343A4780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202FD323-11A5-4743-A5AB-AFBBC0D0F56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202FD323-11A5-4743-A5AB-AFBBC0D0F56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202FD323-11A5-4743-A5AB-AFBBC0D0F56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202FD323-11A5-4743-A5AB-AFBBC0D0F56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E3AEC9-8FB6-426A-AAE5-4C53E6699CF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E3AEC9-8FB6-426A-AAE5-4C53E6699CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E3AEC9-8FB6-426A-AAE5-4C53E6699CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E3AEC9-8FB6-426A-AAE5-4C53E6699CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
