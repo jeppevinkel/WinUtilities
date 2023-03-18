@@ -46,5 +46,4 @@ public partial class MainWindow : Window
 }
 ```
 
-This example will print the name of any key that is pressed, and it will block any presses to the H key.  
-One thing to note is that it's very important to call `UnHook()` prior to shutting down the application, as Windows doesn't automatically handle the cleanup of hooks.
+This example will print the name of any key that is pressed, and it will block any presses to the H key.
