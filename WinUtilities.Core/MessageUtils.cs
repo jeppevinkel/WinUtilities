@@ -63,26 +63,21 @@ namespace WinUtilities.Core
         /// <param name="cancellationToken"></param>
         public static void StartMessageLoop(CancellationToken? cancellationToken = null)
         {
-            Console.WriteLine("Start");
-            // Console.WriteLine(GetMessage(out var msg, HookUtils.GetModuleHandle(curModule?.ModuleName), 0, 0));
             MSG msg;
             int ret;
-            Console.WriteLine(GetMessage(out msg, IntPtr.Zero, 0, 0));
 
-            // while ((ret = GetMessage(out var msg, IntPtr.Zero, 0, 0)) != 0)
-            // {
-            //     return;
-            //     if (ret == -1)
-            //     {
-            //         Console.WriteLine("Something is wrong!");
-            //         return;
-            //     }
-            //     
-            //     
-            //     TranslateMessage(ref msg);
-            //     DispatchMessage(ref msg);
-            // }
-            Console.WriteLine("Stop");
+            while ((ret = GetMessage(out msg, IntPtr.Zero, 0, 0)) != 0)
+            {
+                if (ret == -1)
+                {
+                    Console.WriteLine("Something is wrong!");
+                    return;
+                }
+                
+                
+                TranslateMessage(ref msg);
+                DispatchMessage(ref msg);
+            }
         }
     }
 }
