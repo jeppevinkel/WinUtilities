@@ -8,6 +8,12 @@
         <PackageProjectUrl>https://github.com/jeppevinkel/WinUtilities/tree/master/WinUtilities.Core</PackageProjectUrl>
         <RepositoryUrl>https://github.com/jeppevinkel/WinUtilities</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
 </Project>

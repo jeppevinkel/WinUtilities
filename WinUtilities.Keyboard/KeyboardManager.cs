@@ -37,7 +37,7 @@ namespace WinUtilities.Keyboard
         {
             if (_currentlyHooked)
                 return false;
-            Console.WriteLine("Hooking up...");
+            Debug.WriteLine("Hooking up...");
             _keyboardHookId = SetKeyboardHook(_keyboardHookProcedure);
             _currentlyHooked = true;
             return true;
@@ -70,8 +70,11 @@ namespace WinUtilities.Keyboard
         {
             var keyDown = (IntPtr) KeyEvent.KEY_DOWN;
             var keyUp = (IntPtr) KeyEvent.KEY_UP;
+            var sysKeyDown = (IntPtr) KeyEvent.SYS_KEY_DOWN;
+            var sysKeyUp = (IntPtr) KeyEvent.SYS_KEY_UP;
+            
 
-            if (nCode < 0 || (wParam != keyDown && wParam != keyUp))
+            if (nCode < 0 || (wParam != keyDown && wParam != keyUp && wParam != sysKeyDown && wParam != sysKeyUp))
                 return HookUtils.CallNextHookEx(_keyboardHookId, nCode, wParam, lParam);
             
             var key = (Key) Marshal.ReadInt32(lParam);
@@ -86,7 +89,11 @@ namespace WinUtilities.Keyboard
                     OnKeyReleaseEvent(this, eventArgs);
                     break;
                 case KeyEvent.SYS_KEY_DOWN:
+                    OnKeyPressEvent(this, eventArgs);
+                    break;
                 case KeyEvent.SYS_KEY_UP:
+                    OnKeyReleaseEvent(this, eventArgs);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(wParam), wParam, null);
             }
