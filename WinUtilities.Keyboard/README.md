@@ -1,4 +1,5 @@
 # WinUtilities.Keyboard
+![Nuget](https://img.shields.io/nuget/v/WinUtilities.Keyboard)
 
 This is the WinUtilities module designed for interactions with the keyboard.
 
