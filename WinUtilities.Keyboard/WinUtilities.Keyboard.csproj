@@ -10,12 +10,14 @@
         <RepositoryType>Git</RepositoryType>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Version>1.1.0</Version>
+        <PackageReleaseNotes>Add system key presses.</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\WinUtilities.Core\WinUtilities.Core.csproj" />
-        <None Include="README.md" Pack="true" PackagePath="\"/>
-        <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>
