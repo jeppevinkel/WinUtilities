@@ -1,4 +1,5 @@
 # WinUtilities
+![Nuget](https://img.shields.io/nuget/v/WinUtilities.Core)
 
 WinUtilities is means to be a package of utilities that helps interact with some native windows features directly from .NET projects.
 
